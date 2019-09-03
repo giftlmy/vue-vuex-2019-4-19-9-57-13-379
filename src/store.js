@@ -2,7 +2,7 @@ export default{
     // strict:true,
     state:{
         todoList:[],
-        currentFilter:""
+        currentFilter:'active'
         
     },
     mutations:{
@@ -12,6 +12,9 @@ export default{
                 status: "active"
             });
         },
+        statusUpdate(state,status){
+            state.currentFilter = status;
+        }
        
     }
 }

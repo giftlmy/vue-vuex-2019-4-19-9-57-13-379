@@ -18,9 +18,7 @@ export default {
   },
   methods: {
     handleAdd: function() {
-        this.$store.commit("addNewToDo",this.inputtingText)
-        console.log(this.$store.state.todoList);
-        // this.$emit("addNewToDo",this.inputtingText),
+        this.$store.commit("addNewToDo",this.inputtingText);
         this.inputtingText = "";
     },
     handleChange: function(event){

@@ -36,13 +36,12 @@
                  * 定义了 todo item 中属性为 {content:'吃饭',status:'active'}
                  * 定义了 todo 的两种状态 completed、active，默认为 active
                  */
-                currentFilter: 'active',
                 
             }
         },
         methods:{
             handleStatusUpdate:function(status){
-                this.currentFilter = status;
+                this.$store.commit("statusUpdate",status);
             },
            changeStatus: function(item){
                if(item.selected == true){
@@ -62,6 +61,9 @@
             },
             todoList: function(){
                 return this.$store.state.todoList;
+            },
+            currentFilter: function(){
+                return this.$store.state.currentFilter;
             }
 
         }
